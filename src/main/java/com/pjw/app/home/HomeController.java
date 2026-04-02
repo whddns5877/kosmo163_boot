@@ -10,12 +10,10 @@ public class HomeController {
 	@RequestMapping(value="/",method = RequestMethod.GET)
 	public String home() throws Exception {
 		
-		int a=0;
-		if(a%2==0) {
-			throw new Exception();
-		}
 		
-		return "/WEB-INF/views/index.jsp";
+		return "index";
+		
+		
 		
 	}
 	

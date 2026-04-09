@@ -2,10 +2,10 @@ package com.pjw.app.professor;
 
 import java.util.List;
 
-import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-@Mapper
+@RequestMapping
 public interface ProfessorMapper {
 
 	

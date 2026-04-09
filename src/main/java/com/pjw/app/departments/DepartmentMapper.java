@@ -2,9 +2,10 @@ package com.pjw.app.departments;
 
 import java.util.List;
 
-import org.apache.ibatis.annotations.Mapper;
 
-@Mapper
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@RequestMapping
 public interface DepartmentMapper {
 	
 	//list

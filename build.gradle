@@ -1,3 +1,4 @@
+
 plugins {
 	id 'java'
 	id 'war'
@@ -5,7 +6,7 @@ plugins {
 	id 'io.spring.dependency-management' version '1.1.7'
 }
 
-group = 'com.pjw'
+group = 'com.winter'
 version = '0.0.1-SNAPSHOT'
 
 java {
@@ -20,7 +21,8 @@ repositories {
 
 dependencies {
 
-implementation("com.oracle.database.jdbc:ojdbc11:23.26.1.0.0")
+
+	implementation("com.oracle.database.jdbc:ojdbc11:23.26.1.0.0")
 	
 	implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.5")
 	
@@ -36,17 +38,17 @@ implementation("com.oracle.database.jdbc:ojdbc11:23.26.1.0.0")
 	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper' 
     implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api'
     runtimeOnly 'org.glassfish.web:jakarta.servlet.jsp.jstl'
-
 }
-eclipse {
+
+ eclipse {
     wtp {
         facet {
-            facet name: 'jst.web', version: '6.0' 
+            facet name: 'jst.web', version: '6.0'
             
         }
     }
 }
-            
+
 tasks.named('test') {
 	useJUnitPlatform()
 }

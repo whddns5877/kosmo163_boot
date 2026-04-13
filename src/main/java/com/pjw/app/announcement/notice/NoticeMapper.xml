@@ -4,8 +4,12 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
   <mapper namespace="com.pjw.app.announcement.notice.NoticeMapper">
+  <select id="getCount" resultType="Long">
+  	SELECT COUNT(ANNOUNCEMENT_NUM) FROM TB_NOTICE
+  
+  </select>
   	<!-- list -->
-  <select id="list" resultType="noticeDTO">
+  <select id="list" resultType="noticeDTO" parameterType="pager">
   		SELECT ANNOUNCEMENT_NUM,ANNOUNCEMENT_TITLE,ANNOUNCEMENT_WRITER FROM TB_NOTICE
   	</select>
   		<insert id="create" parameterType="noticeDTO">

@@ -1,0 +1,38 @@
+package com.pjw.app.announcement.notice;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.pjw.app.announcement.page.Pager;
+
+@Service
+public class NoticeService {
+
+		
+	@Autowired
+	private NoticeMepper noticeMapper;
+	
+
+	
+	
+	public List<NoticeDTO> list(Pager pager)throws Exception{
+		
+		pager.makePageNumber(noticeMapper.getCount());
+		
+		
+		
+		return noticeMapper.list(pager);
+	}
+	
+	
+	
+	
+	public int create(NoticeDTO noticeDTO)throws Exception{
+		return noticeMapper.create(noticeDTO);
+	}
+
+}
